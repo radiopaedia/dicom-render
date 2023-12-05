@@ -1,0 +1,27 @@
+{
+  "name": "dicom-render",
+  "version": "0.1.0",
+  "description": "Rendering DICOM images on the server with node-canvas and cornerstone.js",
+  "main": "dicom-render.js",
+  "type": "module",
+  "scripts": {
+    "build:vendor": "./install.sh",
+    "build:rollup": "rollup -c",
+    "build": "npm run build:vendor && npm run build:rollup",
+    "start:node": "node ./node-render.js --quiet"
+  },
+  "author": "Flaki <git@flaki.hu>",
+  "license": "MIT",
+  "dependencies": {
+    "@cornerstonejs/core": "^1.27.2",
+    "canvas": "^2.11.2",
+    "dicom-parser": ">=1.8.3",
+    "sharp": "^0.33.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.2.0",
+    "rollup-plugin-sourcemaps": "^0.6.3"
+  }
+}
