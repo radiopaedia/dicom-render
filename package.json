@@ -1,6 +1,6 @@
 {
   "name": "dicom-render",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rendering DICOM images on the server with node-canvas and cornerstone.js",
   "main": "dicom-render.js",
   "type": "module",
