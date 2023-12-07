@@ -1,4 +1,8 @@
-#!/usr/bin/env node
+#!/usr/bin/env -S NODE_OPTIONS="--no-warnings" node
+
+// NOTE: `-S NODE_OPTIONS="--no-warnings"` is used to disable the experimental feature warning of the JSON loader
+// https://nodejs.org/api/cli.html#cli_node_no_warnings_1
+// https://github.com/nodejs/node/issues/10802
 
 // IMPORTS
 import { checkpoint, results, total } from './lib/perf.js';
@@ -8,7 +12,6 @@ import sharp from 'sharp';
 
 // Read version from package.json
 // NOTE: The API has recently changed from 'assert' to 'with', Node version prior 20.10 may fail to recognize it
-// NOTE: Experimental feature, will print a warning on STDERR
 // https://nodejs.org/dist/latest-v20.x/docs/api/esm.html#import-attributes
 import packageConfig from './package.json' with { type: 'json' };
 
