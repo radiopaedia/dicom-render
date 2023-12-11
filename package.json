@@ -13,7 +13,7 @@
   "author": "Flaki <git@flaki.hu>",
   "license": "MIT",
   "dependencies": {
-    "@cornerstonejs/core": "^1.27.2",
+    "@cornerstonejs/core": "1.27.2",
     "canvas": "^2.11.2",
     "dicom-parser": ">=1.8.3",
     "serve-handler": "^6.1.5",
@@ -22,7 +22,6 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "rollup": "^4.2.0",
-    "rollup-plugin-sourcemaps": "^0.6.3"
+    "rollup": "^4.2.0"
   }
 }

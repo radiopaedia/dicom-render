@@ -1,7 +1,6 @@
 // rollup.config.js
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import inputsourcemaps from 'rollup-plugin-sourcemaps';
 import { readFileSync } from 'node:fs';
 
 export default {
@@ -13,7 +12,6 @@ export default {
         sourcemap: true,
 	},
 	plugins: [
-        //inputsourcemaps(),
         commonjs(),
         resolve(),
         stubs(),

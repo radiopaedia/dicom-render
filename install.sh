@@ -1,8 +1,9 @@
 #!/bin/bash
 set -exuo pipefail
 
-# Default tag to use when choosing the Cornerstone3D release to download
-CORNERSTONE_VERSION="${CORNERSTONE_VERSION:-v1.27.2}"
+# Select which Cornerstone3D release to download
+# Defaults to the version listed in package.json
+CORNERSTONE_VERSION="${CORNERSTONE_VERSION:-v$(grep -o '@cornerstonejs/core[^,]*' package.json | grep -o '[0-9.]*')}"
 
 ##
 ## Required dependencies (apt install):
