@@ -9,6 +9,7 @@ import { checkpoint, results, total } from './lib/perf.js';
 import './lib/debugging.js';
 import { imageMetadata, loadImageFile, loadImageBlob, renderImage } from './build/dicom.js';
 import sharp from 'sharp';
+import serve from './lib/serve.js';
 
 // Read version from package.json
 // NOTE: The API has recently changed from 'assert' to 'with', Node version prior 20.10 may fail to recognize it
@@ -173,6 +174,12 @@ if (process.argv[process.argv.length-1] === '-v') {
 		pipeline: `${packageConfig.name}-v${packageConfig.version}`,
 		protocol_version: 1
 	}));
+	process.exit(0);
+}
+
+// Web UI mode
+if (process.argv[process.argv.length-1] === '--webui') {
+	await serve();
 	process.exit(0);
 }
 

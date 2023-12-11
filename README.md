@@ -27,6 +27,7 @@ Available commandline parameters:
 - `--debug`: turns on debugging on `stderr`
 - `--perf`: turns on performance traces, execution of various phases will be tracked and a summary will be printed on `stderr` at the end of execution
 - `--output=<json|jpeg>`: the output format. Defaults to JSON serialized metadata/pixeldata. JPEG images can also be produced (this uses [sharp](https://github.com/lovell/sharp), a library with native dependencies)
+- `--webui`: enables the webserver which serves a browser interface on `localhost:3000`. This UI allows displaying any local DICOM file in the browser with the exact same code/libraries as used by dicom-render on the server.
 
 
 ## How does it work?
