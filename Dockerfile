@@ -35,16 +35,11 @@ RUN corepack enable && \
 	corepack prepare yarn@1.22.19 --activate
 
 
-# Build the patched Cornerstone.js libraries
+# Build the patched Cornerstone.js libraries and install runtime dependencies
 WORKDIR /dicom-render
-COPY install.sh .
+COPY install.sh package*.json .
 
-RUN ./install.sh
-##=RUN npm run build:vendor
-
-# Install runtime dependencies
-COPY package*.json .
-RUN npm install
+RUN ./install.sh && npm install
 
 # Build the dicom.js module that is used by dicom-render.js to render DICOM images
 COPY lib/* ./lib/
